@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
-    private static final StringBuilder str = new StringBuilder();
-    private static final PaymentTransactionService service = new PaymentTransactionService();
+    private static final Cost cost=new Cost();
     private static Payment paymentMethod;
 
     public static void main(String[] args) {
@@ -15,7 +14,7 @@ public class Main {
         boolean repeatTransaction=true;
         while (repeatTransaction) {
             try {
-                service.pay(paymentMethod);
+                cost.pay(paymentMethod);
                 repeatTransaction=false;
             } catch (SystemNotWorkingException e) {
                 System.out.println(e.getMessage());
@@ -24,6 +23,7 @@ public class Main {
     }
 
     private static StringBuilder printMenu() {
+        final StringBuilder str = new StringBuilder();
         str.append("*********** Welcome to the FastPayGate ***********").append("\n");
         str.append("  Payment Methods in FastPayGate").append("\n");
         str.append(" 1 - Credit Card").append("\n");
@@ -41,6 +41,7 @@ public class Main {
             int method = scanner.nextInt();
             paymentMethod = PaymentFactory.getAPaymentMethod(method);
             if (paymentMethod != null) {
+                System.out.println("Your payment method: "+paymentMethod.getPaymentType());
                 validMethod = true;
             }
         } while (!validMethod);
