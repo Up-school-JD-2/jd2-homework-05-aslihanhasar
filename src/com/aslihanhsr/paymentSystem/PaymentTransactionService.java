@@ -6,12 +6,7 @@ import java.util.Scanner;
 
 public class PaymentTransactionService {
     private final Scanner scanner = new Scanner(System.in);
-    private Cost cost;
 
-    public void pay(Payment payment) throws SystemNotWorkingException {
-        checkPaymentAmount();
-        payment.pay(cost);
-    }
     public String checkCardNumber()  {
         System.out.print("Enter the credit card number : ");
         String cardNumber = scanner.next();
@@ -59,20 +54,5 @@ public class PaymentTransactionService {
             checkCardSecurityCode();
         }
         return securityCode;
-    }
-
-    private void checkPaymentAmount() {
-        System.out.print("How much do you want to pay? (₺) : ");
-        double amount = scanner.nextDouble();
-        cost = new Cost(amount);
-        try {
-            boolean validAmount = cost.isValidAmount();
-            if (!validAmount) {
-                throw new InvalidAmountException("Amount must be in format (0.0)", amount);
-            }
-        } catch (InvalidAmountException e) {
-            System.out.println(e.getMessage() + " - " + e.getAmount());
-            checkPaymentAmount();
-        }
     }
 }
