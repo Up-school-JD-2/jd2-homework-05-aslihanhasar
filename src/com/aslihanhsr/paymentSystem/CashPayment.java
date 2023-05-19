@@ -2,8 +2,8 @@ package com.aslihanhsr.paymentSystem;
 
 public class CashPayment implements Payment {
     @Override
-    public void pay(Cost cost) {
-        System.out.println(cost.getAmount()+" is payed in cash.");
+    public void pay(double amount) {
+        System.out.println(amount+" ₺ is paid in cash.");
     }
 
     @Override

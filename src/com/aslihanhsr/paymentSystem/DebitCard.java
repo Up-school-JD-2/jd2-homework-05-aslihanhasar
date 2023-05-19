@@ -17,13 +17,13 @@ public class DebitCard extends CardPayment{
     }
 
     @Override
-    public void pay(Cost cost) throws SystemNotWorkingException {
+    public void pay(double amount) throws SystemNotWorkingException {
         Random randomNumber=new Random();
         int possibility= randomNumber.nextInt(0,50);
         if(possibility> DomainConstants.DEBIT_CARD_PAYMENT_POSSIBILITY){
             throw new SystemNotWorkingException("Transaction not available.");
         }else{
-            System.out.println(cost.getAmount()+" payed.");
+            System.out.println(amount+" payed.");
         }
     }
 }

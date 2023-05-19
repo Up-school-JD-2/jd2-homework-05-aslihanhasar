@@ -3,6 +3,6 @@ package com.aslihanhsr.paymentSystem;
 import com.aslihanhsr.paymentSystem.exceptionManagement.SystemNotWorkingException;
 
 public interface Payment {
-    void pay(Cost cost) throws SystemNotWorkingException;
+    void pay(double amount) throws SystemNotWorkingException;
     String getPaymentType();
 }
