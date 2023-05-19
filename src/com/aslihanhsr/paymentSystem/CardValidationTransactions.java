@@ -1,5 +1,7 @@
 package com.aslihanhsr.paymentSystem;
 
+import com.aslihanhsr.paymentSystem.domainConstants.DomainConstants;
+
 import java.time.LocalDate;
 
 public class CardValidationTransactions {
@@ -13,7 +15,7 @@ public class CardValidationTransactions {
     }
 
     public static boolean isValidCardNumber(String cardNumber) {
-        if (cardNumber.length() != 16) {
+        if (cardNumber.length() != DomainConstants.CREDIT_CARD_NUMBER_DIGIT) {
             return false;
         }
         return containsDigits(cardNumber);
@@ -35,17 +37,14 @@ public class CardValidationTransactions {
     }
 
     public static boolean isValidCVV(String text) {
-        if (text.length() != 3) {
+        if (text.length() != DomainConstants.CREDIT_CARD_CVV_DIGIT) {
             return false;
         }
         return containsDigits(text);
     }
 
     public static boolean isDateFormatCorrect(String text) {
-        if (!text.contains("/")) {
-            return false;
-        }
-        return true;
+        return text.contains("/");
     }
 
     private static int getCurrentYear() {
