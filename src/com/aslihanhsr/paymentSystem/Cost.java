@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class Cost {
 
-    private double amount;
+    private String amount;
 
-    public double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
@@ -21,10 +21,10 @@ public class Cost {
         payment.pay(amount);
     }
 
-    private double checkPaymentAmount() {
+    private String checkPaymentAmount() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("How much do you want to pay? (₺) : ");
-        double amount = scanner.nextDouble();
+        String amount = scanner.next();
         try {
             boolean validAmount = isValidAmount();
             if (!validAmount) {
@@ -38,15 +38,12 @@ public class Cost {
     }
 
     private boolean isValidAmount() {
-        if (amount < 0) {
-            return false;
-        }
-        String convertedAmount = Double.toString(amount);
-        for (char c : convertedAmount.toCharArray()) {
+        for (char c : amount.toCharArray()) {
             if (c == ',') {
                 return false;
             }
         }
-        return true;
+        double convertedAmount=Double.parseDouble(amount);
+        return !(convertedAmount < 0);
     }
 }

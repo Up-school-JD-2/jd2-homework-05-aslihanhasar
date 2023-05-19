@@ -17,7 +17,7 @@ public class CreditCard extends CardPayment{
     }
 
     @Override
-    public void pay(double amount) throws SystemNotWorkingException {
+    public void pay(String amount) throws SystemNotWorkingException {
         Random randomNumber=new Random();
         int possibility=randomNumber.nextInt(0,100);
         if(possibility> DomainConstants.CREDIT_CARD_PAYMENT_POSSIBILITY){

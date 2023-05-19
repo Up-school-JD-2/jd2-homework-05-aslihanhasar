@@ -2,7 +2,7 @@ package com.aslihanhsr.paymentSystem;
 
 public class CashPayment implements Payment {
     @Override
-    public void pay(double amount) {
+    public void pay(String amount) {
         System.out.println(amount+" ₺ is paid in cash.");
     }
 
