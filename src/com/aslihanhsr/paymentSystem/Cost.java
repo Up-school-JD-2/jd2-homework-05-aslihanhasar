@@ -24,14 +24,15 @@ public class Cost {
     private String checkPaymentAmount() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("How much do you want to pay? (₺) : ");
-        String amount = scanner.next();
+        amount = scanner.next();
         try {
             boolean validAmount = isValidAmount();
             if (!validAmount) {
-                throw new InvalidAmountException("Amount must be in format (0.0)", amount);
+                throw new InvalidAmountException("Amount must be in format (0.0).", amount);
             }
         } catch (InvalidAmountException e) {
-            System.out.println(e.getMessage() + " - " + e.getAmount());
+            System.out.println(e.getMessage() + '\n'+
+                    "Your input: " + e.getAmount());
             checkPaymentAmount();
         }
         return amount;
