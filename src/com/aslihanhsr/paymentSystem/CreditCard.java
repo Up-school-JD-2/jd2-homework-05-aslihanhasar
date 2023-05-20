@@ -21,7 +21,7 @@ public class CreditCard extends CardPayment {
         Random randomNumber = new Random();
         int possibility = randomNumber.nextInt(0, 100);
         if (possibility > DomainConstants.CREDIT_CARD_PAYMENT_POSSIBILITY) {
-            throw new SystemNotWorkingException("Transaction not available. Try again.");
+            throw new SystemNotWorkingException("Transaction not available.");
         } else {
             System.out.println(amount + " ₺ is paid.");
         }
