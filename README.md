@@ -34,4 +34,4 @@ Uygulamanın akışında, kısıtlamalar uygulandığı sürece serbestsiniz.
 
 ![img_2.png](img_2.png)
 
-**If a system error is received again, "Please contact your bank." message can be given.**
+**If a system error is received again, "Please contact your bank." message is given.**
