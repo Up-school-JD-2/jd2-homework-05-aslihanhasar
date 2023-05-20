@@ -5,7 +5,6 @@ import com.aslihanhsr.paymentSystem.customExceptions.*;
 import java.util.Scanner;
 
 public class Cost {
-
     private String amount;
 
     public String getAmount() {
@@ -17,7 +16,7 @@ public class Cost {
     }
 
     public void pay(Payment payment) throws SystemNotWorkingException {
-        amount=checkPaymentAmount();
+        amount = checkPaymentAmount();
         payment.pay(amount);
     }
 
@@ -31,7 +30,7 @@ public class Cost {
                 throw new InvalidAmountException("Amount must be in format (0.0).", amount);
             }
         } catch (InvalidAmountException e) {
-            System.out.println(e.getMessage() + '\n'+
+            System.out.println(e.getMessage() + '\n' +
                     "Your input: " + e.getAmount());
             checkPaymentAmount();
         }
@@ -44,7 +43,7 @@ public class Cost {
                 return false;
             }
         }
-        double convertedAmount=Double.parseDouble(amount);
+        double convertedAmount = Double.parseDouble(amount);
         return !(convertedAmount < 0);
     }
 }

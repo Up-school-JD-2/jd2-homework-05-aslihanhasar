@@ -1,10 +1,11 @@
 package com.aslihanhsr.paymentSystem.customExceptions;
 
-public class InvalidAmountException extends Exception{
+public class InvalidAmountException extends Exception {
     private final String amount;
-    public InvalidAmountException(String message,String amount){
+
+    public InvalidAmountException(String message, String amount) {
         super(message);
-        this.amount=amount;
+        this.amount = amount;
     }
 
     public String getAmount() {
