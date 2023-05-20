@@ -1,6 +1,6 @@
 package com.aslihanhsr.paymentSystem;
 
-import com.aslihanhsr.paymentSystem.exceptionManagement.*;
+import com.aslihanhsr.paymentSystem.customExceptions.*;
 
 import java.util.Scanner;
 

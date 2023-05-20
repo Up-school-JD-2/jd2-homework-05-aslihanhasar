@@ -1,4 +1,4 @@
-package com.aslihanhsr.paymentSystem.exceptionManagement;
+package com.aslihanhsr.paymentSystem.customExceptions;
 
 public class InvalidCardNumberException extends Exception{
     private final String cardNumber;

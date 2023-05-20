@@ -1,4 +1,4 @@
-package com.aslihanhsr.paymentSystem.exceptionManagement;
+package com.aslihanhsr.paymentSystem.customExceptions;
 
 public class InvalidCardExpirationDateException extends Exception{
     private final String expirationDate;

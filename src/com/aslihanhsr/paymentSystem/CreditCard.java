@@ -1,6 +1,6 @@
 package com.aslihanhsr.paymentSystem;
 
-import com.aslihanhsr.paymentSystem.exceptionManagement.*;
+import com.aslihanhsr.paymentSystem.customExceptions.*;
 import com.aslihanhsr.paymentSystem.domainConstants.*;
 
 import java.util.Random;
